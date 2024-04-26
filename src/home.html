@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body class="flex flex-col  bg-gradient-to-tr from-purple-500 to-gray-800 min-h-screen">
+    <header class=" fixed bg-white w-full  z-20">
+        <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
+            <div>
+                <h1 class="text-2xl font-semibold">ENLIGHT</h1>
+
+
+            </div>
+
+            <div
+                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex md:items-center px-5">
+                <ul class="flex md:flex-row flex-col items-center md:gap-[4vw] gap-8 ">
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Co-Curricular</a>
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Teachers</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Events</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button class="bg-[#a6c1ee] text-white m-1 px-5 py-2 rounded-full hover:bg-[#89aced] ">Sign In</button>
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
+        <section>
+            <div class="carous">
+
+            </div>
+        </section>
+
+    </header>
+
+    <!--====================================home carousel section====================================-->
+    <div class="relative bg-gray-500">
+        <div class="h-screen">
+            <div x-data="{ slide: 0, max: 2 }" class="relative w-full">
+                <!-- <template x-for="(image, index) in ['/resources/students_1.jpg' '/resources/students_2.jpg', '/resources/students_3.jpg']" :key="index"> -->
+                <div x-show="slide === index" class="absolute inset-0">
+                    <img src="/resources/students_1.jpg" alt="students" class="w-full h-full object-cover" />
+                    <!-- <div class="absolute inset-0 flex items-center justify-center text-white"> -->
+                    <h1 class="text-4xl font-bold">Slide {{ index + 1 }}</h1>
+                </div>
+            </div>
+            <!-- </template> -->
+            <button @click="slide = (slide === 0) ? max : slide - 1"
+                class="absolute top-0 left-0 mt-20 ml-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded">Previous</button>
+            <button @click="slide = (slide === max) ? 0 : slide + 1"
+                class="absolute top-0 right-0 mt-20 mr-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded">Next</button>
+        </div>
+    </div>
+    </div>
+
+    <!--====================================About section====================================-->
+    <div class=" w-full h-screen bg-gray-300 ">
+        <div class="flex h-[60%] bg-gray-200   mt-36 ml-10 hover:outline-1 shadow ">
+            <!-- Image area -->
+            <div class="w-[43%] bg-gradient-to-bl from-gray-300 to-gray-100 h-full ">
+                <img class="h-full w-full" src="/resources/student_5.jpg" alt="About us Image">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-100"></div>
+
+            </div>
+            <!-- text area -->
+            <div class="w-[55%] mr-auto bg-gradient-to-tr from-gray-300 to-gray-200 pt-20 pl-11 justify-center block">
+                <div class="bg-none w-[75%] justify-center">
+                    <h1 class="text-black text-3xl font-semibold text-center">A FEW WORDS ABOUT US</h1>
+                    <p class="mt-5 mx-12">
+                        At Enlight High School, we are committed to providing a supportive and inclusive learning
+                        environment where students can thrive academically, socially, and personally. Our dedicated
+                        faculty and staff strive to inspire a love for learning, critical thinking, and creativity in
+                        our students. With a focus on holistic development, we offer a wide range of extracurricular
+                        activities, sports, and community service opportunities. At Enlight High School, we believe in
+                        nurturing the potential of every student and preparing them for success in their future
+                        endeavors </p>
+                    <button
+                        class="p-2 ml-16 mt-2 w-fit bg-gray-400 text-gray-950 hover:p-3 hover:bg-bg-gray-300 rounded-full transition-all delay-0">
+                        <a href="#"> Learn More</a>
+
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!--====================================count section====================================-->
+
+        <div class="flex col-span-6 space-x-28 justify-center">
+            <div class=" mt-10 w-fit">
+                <div class="flex space-x-5">
+                    <img class="w-12" src="/resources/icons/user.png" alt="">
+                    <span id="count" class="text-4xl pt-2">0</span>
+                </div>
+
+                <h1 class="text">
+                    students Enrolled
+                </h1>
+            </div>
+
+            <div class=" mt-10 w-fit">
+                <div class="flex space-x-5">
+                    <img class="w-12" src="/resources/icons/teacher.png" alt="">
+                    <span id="count" class="text-4xl pt-2">50</span>
+                </div>
+
+                <h1 class="text">
+                    Professional Teachers
+                </h1>
+            </div>
+
+            <div class=" mt-10 w-fit">
+                <div class="flex space-x-5">
+                    <img class="w-12" src="/resources/icons/thumb.png" alt="">
+                    <span id="count" class="text-4xl pt-2">100%</span>
+                </div>
+
+                <h1 class="text">
+                    Parent Satisfaction
+                </h1>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--====================================News section====================================-->
+    <div class="h-screen bg-gray-300 flex-col items-center">
+        <div class="pt-32  h-fit">
+            <h1 class="text-3xl font font-semibold text-center">
+                CATCH UP WITH THE LATEST NEWS
+            </h1>
+        </div>
+        <div class="flex h-fit justify-center mt-32 space-x-8">
+            <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow ">
+                <img src="/resources/onlineclass_1.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+                <!-- date -->
+                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
+                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold "> Learning at Home Effectively
+                </h1>
+
+            </div>
+            <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow ">
+                <img src="/resources/teachers/teachers_1.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+                <!-- date -->
+                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
+                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold ">Meet your New Teachers</h1>
+
+            </div>
+
+            <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow ">
+                <img src="/resources/teachers/backtoschool.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+                <!-- date -->
+                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
+                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold "> Back to School News Updates
+                </h1>
+
+            </div>
+        </div>
+        <div class="flex justify-center w-full">
+            <button
+                class="relative p-2  mt-8 w-fit bg-gray-400 text-gray-950 hover:p-3 hover:bg-bg-gray-300 rounded-full transition-all delay-0">
+                <a href="#">More News</a>
+            </button>
+        </div>
+    </div>
+
+    <!--====================================Academics Section====================================-->
+    <div class="h-screen bg-gray-300 flex-col">
+        <div class="flex justify-center h-fit ">
+            <h1 class="pt-6 text-center text-3xl font-semibold">Academics</h1>
+        </div>
+        <div class=" flex justify-center h-full mt-9 gap-10">
+            <div class="relative w-[35%] justify-center h-[40%] bg-gray-300   shadow">
+                <img class="h-full w-full"  src="/resources/academics/maths.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+                <div class="absolute p-5 mt-9 top-0">
+                    <div class="flex w-full justify-center space-x-3 ">
+                        <img class="h-12 w-12" src="/resources/icons/literacy.png" alt="">
+                        <h1 class="text-white text-2xl text-center pt-2">Mathematics</h1>
+    
+                    </div>
+                    <p class="pt-3 text-white">
+                        At our high school, literacy and writing are fundamental components of our curriculum, emphasizing
+                        communication skills and critical thinking for academic and professional success.
+    
+                        Our comprehensive program covers a wide array of literary topics, providing students with the
+                        necessary tools to excel in their academic pursuits and beyond.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="relative justify-center h-[40%] bg-gray-300 w-[35%]  shadow">
+                <img class="h-full w-full" src="/resources/academics/literature.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+                <div class="absolute p-5 mt-9 top-0">
+                    <div class="flex w-full justify-center space-x-3 ">
+                        <img class="h-12 w-12" src="/resources/icons/literacy.png" alt="">
+                        <h1 class="text-white text-2xl text-center pt-2">Literacy and Writing</h1>
+    
+                    </div>
+                    <p class="pt-3 text-white">
+                        At our high school, literacy and writing are fundamental components of our curriculum, emphasizing
+                        communication skills and critical thinking for academic and professional success.
+    
+                        Our comprehensive program covers a wide array of literary topics, providing students with the
+                        necessary tools to excel in their academic pursuits and beyond.
+                    </p>
+                </div>
+
+            </div>
+           
+        </div>
+        <div class="flex justify-center h-full mt-9 gap-10">
+            <div class="relative justify-center h-[40%] bg-gray-300 w-[35%] shadow ">
+                <img
+                class="relative h-full w-full"
+                src="/resources/academics/science.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
+                <div class="absolute p-5 mt-9 top-0">
+                    <div class="flex w-full justify-center space-x-3 ">
+                        <img class="h-12 w-12" src="/resources/icons/science.png" alt="">
+                        <h1 class="text-gray-100 text-2xl text-center pt-2">Science</h1>
+    
+                    </div>
+                    <p class="pt-3 text-gray-100">
+                        Science is integral to our curriculum, emphasizing hands-on learning and critical thinking for
+                        academic and professional success.
+    
+                        Our program covers diverse scientific topics, equipping students with essential tools for academic
+                        excellence.
+    
+                        Engaging lessons and practical activities foster a deep understanding of scientific concepts,
+                        preparing students for success in the modern world.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="relative justify-center h-[40%] bg-gray-300 w-[35%] shadow ">
+                <img
+                class=" relative h-full w-full"
+                 src="/resources/academics/physical.jpg" alt="">
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-70"></div>
+                <div class="absolute p-5 mt-9 top-0">
+                    <div class="flex w-full justify-center space-x-3 ">
+                        <img class="h-12 w-12" src="/resources/icons/p.png" alt="">
+                        <h1 class="text-gray-100 text-2xl text-center pt-2">Physical Education</h1>
+    
+                    </div>
+                    <p class="pt-3 text-gray-100">
+                        At our high school, physical education is an essential part of our curriculum, emphasizing the
+                        importance of physical activity and overall well-being for students.
+    
+                        Our program covers a wide range of activities and sports, providing students with the opportunity to
+                        develop physical skills, teamwork, and sportsmanship.
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!--====================================why choose us section====================================-->
+    <div class="bg-gray-400 h-screen flex-col ">
+        <div class="flex justify-center h-fit mt-8">
+            <h1 class="text-center pt-10">Why Choose Us</h1>
+        </div>
+
+    </div>
+
+
+
+    <!--====================================footer section====================================-->
+    <footer class="relative bottom-0 bg-gray-900 text-gray-200 mt-auto z-10 ">
+        <div class=" mx-auto py-14 px-6">
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-7">
+                <div class="lg:col-span-4 col-span-12">
+                    <button type="button"
+                        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
+                    <a href="/">
+                        <img class="h-12" src="/resources/logo.jpg" alt="logo">
+                    </a>
+                    <p class="mt-6 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsam quidem magnam culpa
+                        accusantium voluptas alias recusandae pariatur fugit sint temporibus dolore quasi totam, a
+                        voluptatem dolor ullam ab consequatur.
+
+                    </p>
+                </div>
+
+                <div class="lg:col-span-2 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">ENLIGHT</h5>
+                    <ul class="list-none mt-6 space-y-2">
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                About us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                Co-Curricum</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                Teachers</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                Events</a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class=" lg:col-span-3 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">Contact</h5>
+                    <ul class="list-none space-y-2 mt-6">
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Location: Ongata Rongai, Kajiado
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Phone: 0729064995
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Email: kungapatrick81@gmail.com
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-700">
+            <div class="md:text-left text-center container mx-auto py-7 px-6 ">
+                <p class="mb-0">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Kush
+                </p>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="../node_modules/alpinejs/src/alpine.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
