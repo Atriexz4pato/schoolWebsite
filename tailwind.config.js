@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       height:{
         '90vh':'90vh',
+        'screen-80': '80vh'
       },
       width:{
         '33vw':'33vw',
