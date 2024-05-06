@@ -11,6 +11,7 @@ module.exports = {
         '33vw':'33vw',
         '80vw':'80vw',
         '50vw':'50vw',
+        '4vw':'4vw'
       }
     },
   },

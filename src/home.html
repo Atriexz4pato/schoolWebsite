@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 
-<body class="flex flex-col  bg-gradient-to-tr from-purple-500 to-gray-800 min-h-screen">
+<body class="flex flex-col bg-gradient-to-tr from-purple-500 to-gray-800 min-h-screen">
     <header class=" fixed bg-white w-full  z-20">
         <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
             <div>
@@ -24,11 +26,11 @@
                         <a class="hover:text-gray-500" href="#">Home</a>
                     </li>
                     <li>
-                        <a class="hover:text-gray-500" href="#">Co-Curricular</a>
+                        <a class="hover:text-gray-500" href="cocurricular.html">Co-Curricular</a>
                     </li>
 
                     <li>
-                        <a class="hover:text-gray-500" href="#">Teachers</a>
+                        <a class="hover:text-gray-500" href="teachers.html">Teachers</a>
                     </li>
                     <li>
                         <a class="hover:text-gray-500" href="#">Events</a>
@@ -51,28 +53,40 @@
 
             </div>
         </section>
-
+        
     </header>
 
     <!--====================================home carousel section====================================-->
-    <div class="relative bg-gray-500">
-        <div class="h-screen">
-            <div x-data="{ slide: 0, max: 2 }" class="relative w-full">
-                <!-- <template x-for="(image, index) in ['/resources/students_1.jpg' '/resources/students_2.jpg', '/resources/students_3.jpg']" :key="index"> -->
-                <div x-show="slide === index" class="absolute inset-0">
-                    <img src="/resources/students_1.jpg" alt="students" class="w-full h-full object-cover" />
-                    <!-- <div class="absolute inset-0 flex items-center justify-center text-white"> -->
-                    <h1 class="text-4xl font-bold">Slide {{ index + 1 }}</h1>
+   
+    <!--====================================home front section====================================-->
+
+    <div class="h-[90vh]  overflow-hidden">
+        <img src="/resources/students_4.jpg" alt="">
+        <div class="absolute top-0 bg-gray-600 opacity-40 bg-fixed bg-center bg-cover h-full w-full"></div>
+        <div class="absolute inset-0 transform transition-transform duration-500 ease-in-out">
+            <div class="m-40 top-10 w-[85vw] mr-10">
+                <p class="text-3xl text-yellow-100 pl-48">welcome to</p>
+                <h1 class="text-5xl font-semibold text-yellow-300 pl-40 pt-0">Our Enlight <br>Academy</h1>
+                <div class=" w-[70vw] flex justify-end">
+                    <div class="relative w-3/5 left-0 mt-14">
+                        <p class=" text-2xl font-sans font-light">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae! Praesentium maxime
+                            aperiam molestiae cupiditate similique nesciunt odio fuga ullam dolorum quisquam minus eaque
+                            illo quae
+                            iure quod, eveniet officia.
+                        </p>
+                    </div>
                 </div>
+                <button class="md:ml-[50vw] w-fit bg-yellow-300 py-2 px-4 my-6 rounded-full hover:text-xl right-0">
+                    <a href="#">Enroll</a>
+                </button>
+
             </div>
-            <!-- </template> -->
-            <button @click="slide = (slide === 0) ? max : slide - 1"
-                class="absolute top-0 left-0 mt-20 ml-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded">Previous</button>
-            <button @click="slide = (slide === max) ? 0 : slide + 1"
-                class="absolute top-0 right-0 mt-20 mr-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded">Next</button>
+
         </div>
+
     </div>
-    </div>
+
 
     <!--====================================About section====================================-->
     <div class=" w-full h-screen bg-gray-300 border-b border-gray-600 ">
@@ -192,7 +206,7 @@
 
     <!--====================================Academics Section====================================-->
 
-    <div class="bg-gray-400 h-screen flex-col pt-10 ">
+    <div class="bg-gray-400 h-fit flex-col py-14 ">
         <div class="flex justify-center h-fit ">
             <h1 class="pt-4 text-center text-3xl font-semibold">Academics</h1>
         </div>
@@ -209,7 +223,7 @@
                     </svg>
                 </div>
                 <div
-                    class="absolute opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
+                    class="absolute z-30 opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
                     <img class="h-full w-full" src="/resources/academics/maths.jpg" alt="">
                     <div class="absolute top-0 h-full w-full bg-gray-950 opacity-50 "></div>
                     <div class="top-0">
@@ -234,7 +248,7 @@
                     </svg>
                 </div>
                 <div
-                    class="absolute opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
+                    class="absolute z-30 opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
                     <img class="h-full w-full" src="/resources/academics/maths.jpg" alt="">
                     <div class="absolute top-0 h-full w-full bg-gray-950 opacity-50 "></div>
                     <div class="top-0">
@@ -258,7 +272,7 @@
                     </svg>
                 </div>
                 <div
-                    class="absolute opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
+                    class="absolute z-30 opacity-0 invisible bg-gray-200 h-full w-full  overflow-hidden transition-all duration-300 ease-in-out transform group-hover:opacity-100 group-hover:visible group-hover:h-auto group-hover:overflow-auto shadow rounded-lg">
                     <img class="h-full w-full" src="/resources/academics/maths.jpg" alt="">
                     <div class="absolute top-0 h-full w-full bg-gray-950 opacity-50 "></div>
                     <div class="top-0">
@@ -273,22 +287,76 @@
                 <p>One of the favourite subjects passed and liked by our students</p>
             </div>
         </div>
-        <div class="relative mt-5 items-center">
-            <img class="h-full w-full" src="/resources/building.jpg" alt="">
-            <div class="absolute top-0 h-full w-full bg-gray-950 opacity-50 "></div>
-            <p class="top-20">Enlight High is known for its rigorous academics and high-achieving graduates. The school produces top
-                students who excel at prestigious universities, with over 90% gaining college admission, including to
-                Ivy League schools. Westwood's advanced curriculum, talented teachers, and culture of excellence prepare
-                students exceptionally well for success beyond high school.</p>
-        </div>
+          <div class="relative mx-10 min-w-[95vw] container  h-96  bg-gray-800 bottom-0 mt-20">
+            <img class="h-full w-full object-cover" src="/resources/building.jpg" alt="">
+            <div class="absolute top-0 h-full w-full bg-gray-900 opacity-50"></div>
+            <div class="absolute top-0 left-0 flex justify-center items-center h-full w-full">
+              
+                <p class="w-4/5 text-yellow-100 text-2xl font-semibold">Enlight High is known for its rigorous academics and high-achieving graduates. The school produces top students who excel at prestigious universities, with over 90% gaining college admission, including to Ivy League schools. Enlight advanced curriculum, talented teachers, and culture of excellence prepare students exceptionally well for success beyond high school.</p>
+              
+            </div>
+          </div>
 
     </div>
 
     <!--====================================why choose us section====================================-->
 
+    <section class="bg-gray-400 py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center">Our Enlight High</h2>
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div>
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                        </svg>
+    
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="text-lg font-medium text-gray-900">Mission</h3>
+                        <p class="mt-2 text-base text-gray-700">We aim to make the world a better place through innovation
+                            and collaboration.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+    
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="text-lg font-medium text-gray-900">Values</h3>
+                        <p class="mt-2 text-base text-gray-700">We believe in honesty, integrity, and respect for all
+                            individuals.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+    
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="text-lg font-medium text-gray-900">Vision</h3>
+                        <p class="mt-2 text-base text-gray-700">We envision a world where technology is used to solve the
+                            most pressing issues facing humanity and improve people's lives.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
 
-
-
+  
 
     <!--====================================footer section====================================-->
     <footer class="relative bottom-0 bg-gray-900 text-gray-200 mt-auto z-10 ">
@@ -318,12 +386,12 @@
                         </li>
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                                href="#">
+                                href="cocurricular.html">
                                 Co-Curricum</a>
                         </li>
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                                href="#">
+                                href="teachers.html">
                                 Teachers</a>
                         </li>
                         <li>

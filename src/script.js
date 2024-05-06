@@ -1,9 +1,15 @@
-const navlinks=document.querySelector('.nav-links')
-function onToggleMenu(e){
-    e.name=e.name=== 'menu' ? 'close' : 'menu'
+const navlinks = document.querySelector('.nav-links');
+const menuBtn = document.querySelector('ion-icon[name="menu-outline"]');
 
-    navlinks.classList.toggle('top-[8.71%]')
+function onToggleMenu() {
+  navlinks.classList.toggle('top-[8.71%]');
+  navlinks.classList.toggle('hidden');
+  const currentName = menuBtn.getAttribute('name');
+  menuBtn.setAttribute('name', currentName === 'menu-outline' ? 'close-outline' : 'menu-outline');
 }
+
+menuBtn.addEventListener('click', onToggleMenu);
+
 
 let count = 0;
 const targetCount = 1000;
@@ -29,5 +35,4 @@ function displayCurrentDate() {
     currentDateElement.textContent = currentDate;
   }
 
-  // Call the function to display the current date
-  displayCurrentDate();
+  
