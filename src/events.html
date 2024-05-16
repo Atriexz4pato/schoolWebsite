@@ -1,150 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Events</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<body class="relative flex flex-col  bg-gray-300 min-h-screen space-y-2">
-    <header class=" fixed bg-white w-full ">
-    <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
-        <div>
-            <h1 class="text-2xl font-semibold">ENLIGHT</h1>
+
+<body class="relative flex flex-col  bg-gray-200 min-h-screen space-y-2">
+    <header class=" fixed bg-white w-full z-30">
+        <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
+            <div>
+                <h1 class="text-2xl font-semibold">ENLIGHT</h1>
 
 
-        </div>
-
-        <div
-            class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex md:items-center px-5">
-            <ul class="flex md:flex-row flex-col items-center md:gap-[4vw] gap-8 ">
-                <li>
-                    <a class="hover:text-gray-500" href="home.html">Home</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-500" href="src/cocurricular.html">Co-Curricular</a>
-                </li>
-
-                <li>
-                    <a class="hover:text-gray-500" href="#">Teachers</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-500" href="events.html">Events</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-500" href="#">Contact</a>
-                </li>
-            </ul>
-
-        </div>
-
-        <div class="flex items-center gap-6">
-            <button class="bg-[#a6c1ee] text-white m-1 px-5 py-2 rounded-full hover:bg-[#89aced] ">Sign In</button>
-            <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
-                class="text-3xl cursor-pointer md:hidden"></ion-icon>
-        </div>
-    </nav>
-
-</header>
-
-
-
- <!--====================================Events section====================================-->
-<section class="w-screen min-h-screen mt-12">
-<div class="flex justify-center w-screen h-[65vh] " >
-    <div class="h-full w-[60vw] bg-gray-800 "></div>
-    <div class=" h-full w-[40vw]"></div>
-</div>
-</section>
-
-
- <!--====================================footer section====================================-->
- <footer class="relative bottom-0 bg-gray-900 text-gray-200 mt-auto z-10 ">
-    <div class=" mx-auto py-14 px-6">
-        <div class="grid md:grid-cols-12 grid-cols-1 gap-7">
-            <div class="lg:col-span-4 col-span-12">
-                <button type="button"
-                    class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
-                <a href="/">
-                    <img class="h-12" src="/resources/logo.jpg" alt="logo">
-                </a>
-                <p class="mt-6 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsam quidem magnam culpa
-                    accusantium voluptas alias recusandae pariatur fugit sint temporibus dolore quasi totam, a
-                    voluptatem dolor ullam ab consequatur.
-
-                </p>
             </div>
 
-            <div class="lg:col-span-2 md:col-span-4 col-span-12">
-                <h5 class="tracking-wide text-gray-100 font-semibold">ENLIGHT</h5>
-                <ul class="list-none mt-6 space-y-2">
+            <div
+                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex md:items-center px-5">
+                <ul class="flex md:flex-row flex-col items-center md:gap-[4vw] gap-8 ">
                     <li>
-                        <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                            href="#">
-                            About us</a>
+                        <a class="hover:text-gray-500" href="home.html">Home</a>
                     </li>
                     <li>
-                        <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                            href="cocurricular.html">
-                            Co-Curricum</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                            href="teachers.html">
-                            Teachers</a>
-                    </li>
-                    <li>
-                        <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                            href="events.html">
-                            Events</a>
+                        <a class="hover:text-gray-500" href="src/cocurricular.html">Co-Curricular</a>
                     </li>
 
                     <li>
-                        <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                            href="#">
-                            Contacts</a>
+                        <a class="hover:text-gray-500" href="#">Teachers</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="events.html">Events</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Contact</a>
                     </li>
                 </ul>
+
             </div>
 
-            <div class=" lg:col-span-3 md:col-span-4 col-span-12">
-                <h5 class="tracking-wide text-gray-100 font-semibold">Contact</h5>
-                <ul class="list-none space-y-2 mt-6">
-                    <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
-                        Location: Ongata Rongai, Kajiado
-                    </li>
-                    <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
-                        Phone: 0729064995
-                    </li>
-                    <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
-                        Email: kungapatrick81@gmail.com
-                    </li>
-                    <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+            <div class="flex items-center gap-6">
+                <button class="bg-[#a6c1ee] text-white m-1 px-5 py-2 rounded-full hover:bg-[#89aced] ">Sign In</button>
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
 
-                    </li>
-                </ul>
+    </header>
+
+
+
+    <!--====================================Events section====================================-->
+    <section class="w-screen min-h-screen mt-12 bg-gray-200">
+        <div class="flex justify-center w-screen h-[57vh] overflow-hidden">
+            <div class="h-full w-[60vw] bg-gray-800 flex flex-col items-center p-20 my-5">
+
+                <h2 class=" mt-5 text-gray-200 text-4xl font-semibold font-serif">Academic Clinic</h2>
+
+                <p class="w-[30vw] mt-5 text-gray-200 text-xl font-serif">Lorem ipsum dolor sit, amet consectetur
+                    adipisicing elit.
+                    Voluptatibus iste vitae consequatur, omnis ipsam, suscipit minima atque dolores at est possimus
+                    eveniet. Ipsa, excepturi dolor assumenda modi alias sunt vero?</p>
+                <div class="flex items-center p-8 space-x-40">
+                    <div class=" flex space-x-5">
+                        <img src="/resources/events/icons8-calendar-50.png" class="h-8 w-8" alt="">
+                        <p class="text-gray-200 ">June, 6th 2024</p>
+                    </div>
+
+                    <div class=" flex space-x-5">
+                        <img src="/resources/events/icons8-location-50.png" class="h-8 w-8" alt="">
+                        <p class="text-gray-200 ">Enlight Academy</p>
+                    </div>
+                </div>
+                <button class="border-gray-200 border p-3 text-gray-200 hover:bg-gray-200 hover:text-gray-800"><a
+                        href="#">Learn More</a></button>
+
+
+            </div>
+            <div class="relative h-full w-[45vw] overflow-hidden mt-10">
+                <img src="/resources/events/event_1.jpg" alt="" class="h-full w-[60vw] overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50 z-10"></div>
             </div>
         </div>
-    </div>
-    <div class="border-t border-slate-700">
-        <div class="md:text-left text-center container mx-auto py-7 px-6 ">
-            <p class="mb-0">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-                Kush
-            </p>
 
+        <div class="w-screen min-h-fit flex flex-col justify-center items-center">
+            <div class=" flex justify-center mt-10">
+                <h1 class=" mt-5 text-gray-800 text-4xl font-semibold font-serif text-center">Have a Glance at Our
+                    Upcoming Events</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center w-[85vw] min-h-fit mt-10 px-32">
+                <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9">
+                    <img src="/resources/events/events_2.jpg" class="h-[35vh]" alt="">
+                    <div class="flex flex-col justify-center items-center w-[40vw]">
+                        <h1 class="text-3xl font-semibold text-center  m-5">Science Fair</h1>
+                        <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
+                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
+                            aspernatur.</p>
+
+                            <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                                
+                                <div class=" flex space-x-5 ">
+                                    <img src="/resources/events/time.png" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">10:00 am-2:00 pm</p>
+                                </div>
+                                
+                                <div class=" flex space-x-5 ">
+                                    <img src="/resources/events/calendar.png" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">June, 6th 2024</p>
+                                </div>
+            
+                                <div class=" flex space-x-5">
+                                    <img src="/resources/events/location.png" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">Enlight Academy</p>
+                                </div>
+                    </div>
+                    <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
+                        href="#">Learn More</a></button>
+                </div>
+            </div>
+            <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9">
+                <img src="/resources/events/events_3.jpg" class="h-[35vh]" alt="">
+                <div class="flex flex-col justify-center items-center w-[40vw]">
+                    <h1 class="text-3xl font-semibold text-center  m-5">School Come Together</h1>
+                    <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
+                        Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
+                        aspernatur.</p>
+
+                        <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                            
+                            <div class=" flex space-x-5 ">
+                                <img src="/resources/events/time.png" class="h-5 w-5" alt="">
+                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>
+                            </div>
+                            
+                            <div class=" flex space-x-5 ">
+                                <img src="/resources/events/calendar.png" class="h-5 w-5" alt="">
+                                <p class="text-gray-900 ">June, 6th 2024</p>
+                            </div>
+        
+                            <div class=" flex space-x-5">
+                                <img src="/resources/events/location.png" class="h-5 w-5" alt="">
+                                <p class="text-gray-900 ">Enlight Academy</p>
+                            </div>
+                </div>
+                <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
+                    href="#">Learn More</a></button>
+            </div>
         </div>
-    </div>
+        <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9 overflow-hidden">
+            <img src="/resources/events/events_4.jpg" class="h-[35vh] " alt="">
+            <div class="flex flex-col justify-center items-center w-[40vw]">
+                <h1 class="text-3xl font-semibold text-center  m-5">Science Fair</h1>
+                <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
+                    Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
+                    aspernatur.</p>
 
-</footer>
-<script src="../node_modules/alpinejs/src/alpine.js"></script>
-<script src="script.js"></script>
+                    <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                        
+                        <div class=" flex space-x-5 ">
+                            <img src="/resources/events/time.png" class="h-5 w-5" alt="">
+                            <p class="text-gray-900 ">10:00 am-2:00 pm</p>
+                        </div>
+                        
+                        <div class=" flex space-x-5 ">
+                            <img src="/resources/events/calendar.png" class="h-5 w-5" alt="">
+                            <p class="text-gray-900 ">June, 6th 2024</p>
+                        </div>
     
+                        <div class=" flex space-x-5">
+                            <img src="/resources/events/location.png" class="h-5 w-5" alt="">
+                            <p class="text-gray-900 ">Enlight Academy</p>
+                        </div>
+            </div>
+            <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
+                href="#">Learn More</a></button>
+        </div>
+    </div>
+        </div>
+    </section>
+
+
+    <!--====================================footer section====================================-->
+    <footer class="relative bottom-0 bg-gray-900 text-gray-200 mt-auto z-10 ">
+        <div class=" mx-auto py-14 px-6">
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-7">
+                <div class="lg:col-span-4 col-span-12">
+                    <button type="button"
+                        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
+                    <a href="/">
+                        <img class="h-12" src="/resources/logo.jpg" alt="logo">
+                    </a>
+                    <p class="mt-6 ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsam quidem magnam culpa
+                        accusantium voluptas alias recusandae pariatur fugit sint temporibus dolore quasi totam, a
+                        voluptatem dolor ullam ab consequatur.
+
+                    </p>
+
+                </div>
+
+                <div class="lg:col-span-2 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">ENLIGHT</h5>
+                    <ul class="list-none mt-6 space-y-2">
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                About us</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="cocurricular.html">
+                                Co-Curricum</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="teachers.html">
+                                Teachers</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="events.html">
+                                Events</a>
+                        </li>
+
+                        <li>
+                            <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
+                                href="#">
+                                Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class=" lg:col-span-3 md:col-span-4 col-span-12">
+                    <h5 class="tracking-wide text-gray-100 font-semibold">Contact</h5>
+                    <ul class="list-none space-y-2 mt-6">
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Location: Ongata Rongai, Kajiado
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Phone: 0729064995
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+                            Email: kungapatrick81@gmail.com
+                        </li>
+                        <li class="hover:text-gray-400 transition-all duration-500 ease-in-out">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-700">
+            <div class="md:text-left text-center container mx-auto py-7 px-6 ">
+                <p class="mb-0">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    Kush
+                </p>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="../node_modules/alpinejs/src/alpine.js"></script>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
