@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
-<body class="relative flex flex-col  bg-gray-200 min-h-screen space-y-2">
-    <header class=" fixed bg-white w-full z-30">
+<body class=" bg-gray-200 min-h-screen space-y-2">
+    <header class="fixed bg-white h-fit w-full top-0 z-30 py-2 shadow-lg">
         <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
             <div>
                 <h1 class="text-2xl font-semibold">ENLIGHT</h1>
@@ -20,23 +20,24 @@
             </div>
 
             <div
-                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex md:items-center px-5">
+            id="navlinks"
+            class="visible md:visible nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-12 md:w-auto w-full flex md:items-center px-5">
                 <ul class="flex md:flex-row flex-col items-center md:gap-[4vw] gap-8 ">
                     <li>
                         <a class="hover:text-gray-500" href="home.html">Home</a>
                     </li>
                     <li>
-                        <a class="hover:text-gray-500" href="src/cocurricular.html">Co-Curricular</a>
+                        <a class="hover:text-gray-500" href="cocurricular.html">Co-Curricular</a>
                     </li>
 
                     <li>
-                        <a class="hover:text-gray-500" href="#">Teachers</a>
+                        <a class="hover:text-gray-500" href="teachers.html">Teachers</a>
                     </li>
                     <li>
-                        <a class="hover:text-gray-500" href="events.html">Events</a>
+                        <a class="hover:text-gray-500" href="#">Events</a>
                     </li>
                     <li>
-                        <a class="hover:text-gray-500" href="#">Contact</a>
+                        <a class="hover:text-gray-500" href="contact.html">Contact</a>
                     </li>
                 </ul>
 
@@ -44,7 +45,7 @@
 
             <div class="flex items-center gap-6">
                 <button class="bg-[#a6c1ee] text-white m-1 px-5 py-2 rounded-full hover:bg-[#89aced] ">Sign In</button>
-                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                <ion-icon onclick="displayNavlinks(this)" name="menu-outline"
                     class="text-3xl cursor-pointer md:hidden"></ion-icon>
             </div>
         </nav>
@@ -54,17 +55,18 @@
 
 
     <!--====================================Events section====================================-->
-    <section class="w-screen min-h-screen mt-12 bg-gray-200">
-        <div class="flex justify-center w-screen h-[57vh] overflow-hidden">
-            <div class="h-full w-[60vw] bg-gray-800 flex flex-col items-center p-20 my-5">
+    
+    <div class="min-h-screen mt-12 bg-gray-200">
+        <div class="grid grid-cols-1 md:grid-cols-2   justify-center w-screen h-fit md:h-[57vh] overflow-hidden">
+            <div class=" md:h-full md:w-[60vw] bg-gray-800 flex flex-col items-center p-5 md:p-20 md:my-5">
 
                 <h2 class=" mt-5 text-gray-200 text-4xl font-semibold font-serif">Academic Clinic</h2>
 
-                <p class="w-[30vw] mt-5 text-gray-200 text-xl font-serif">Lorem ipsum dolor sit, amet consectetur
+                <p class="md:w-[30vw] mt-5 text-gray-200 text-xl font-serif">Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit.
                     Voluptatibus iste vitae consequatur, omnis ipsam, suscipit minima atque dolores at est possimus
                     eveniet. Ipsa, excepturi dolor assumenda modi alias sunt vero?</p>
-                <div class="flex items-center p-8 space-x-40">
+                <div class="flex items-center p-8 space-x-5 md:space-x-40">
                     <div class=" flex space-x-5">
                         <img src="/resources/events/icons8-calendar-50.png" class="h-8 w-8" alt="">
                         <p class="text-gray-200 ">June, 6th 2024</p>
@@ -80,28 +82,33 @@
 
 
             </div>
-            <div class="relative h-full w-[45vw] overflow-hidden mt-10">
-                <img src="/resources/events/event_1.jpg" alt="" class="h-full w-[60vw] overflow-hidden">
+            <div class="relative h-full md:w-[45vw] overflow-hidden md:mt-10">
+                <img src="/resources/events/event_1.jpg" alt="" class="h-full  overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50 z-10"></div>
             </div>
         </div>
 
+
+            <!--====================================More upcoming events====================================-->
+
+            <!-- Title section -->
         <div class="w-screen min-h-fit flex flex-col justify-center items-center">
-            <div class=" flex justify-center mt-10">
+            <div class=" flex justify-center md:mt-10">
                 <h1 class=" mt-5 text-gray-800 text-4xl font-semibold font-serif text-center">Have a Glance at Our
                     Upcoming Events</h1>
             </div>
-            <div class="flex flex-col justify-center items-center w-[85vw] min-h-fit mt-10 px-32">
-                <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9">
+            <!-- An event -->
+            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
+                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
                     <img src="/resources/events/events_2.jpg" class="h-[35vh]" alt="">
-                    <div class="flex flex-col justify-center items-center w-[40vw]">
-                        <h1 class="text-3xl font-semibold text-center  m-5">Science Fair</h1>
-                        <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">
+                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Science Fair</h1>
+                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
                             consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
                             Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
                             aspernatur.</p>
 
-                            <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                            <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
                                 
                                 <div class=" flex space-x-5 ">
                                     <img src="/resources/events/time.png" class="h-5 w-5" alt="">
@@ -122,16 +129,19 @@
                         href="#">Learn More</a></button>
                 </div>
             </div>
-            <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9">
-                <img src="/resources/events/events_3.jpg" class="h-[35vh]" alt="">
-                <div class="flex flex-col justify-center items-center w-[40vw]">
-                    <h1 class="text-3xl font-semibold text-center  m-5">School Come Together</h1>
-                    <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+          
+        </div>
+        <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
+            <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
+                <img src="/resources/events/events_4.jpg" class="h-[35vh]" alt="">
+                <div class="flex flex-col justify-center items-center  md:w-[40vw]">
+                    <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Best Students Tour</h1>
+                    <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
                         Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
                         aspernatur.</p>
 
-                        <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
                             
                             <div class=" flex space-x-5 ">
                                 <img src="/resources/events/time.png" class="h-5 w-5" alt="">
@@ -152,16 +162,20 @@
                     href="#">Learn More</a></button>
             </div>
         </div>
-        <div class="h-[40vh] flex items-center justify-center p-10 w-full mb-5 space-x-9 overflow-hidden">
-            <img src="/resources/events/events_4.jpg" class="h-[35vh] " alt="">
-            <div class="flex flex-col justify-center items-center w-[40vw]">
-                <h1 class="text-3xl font-semibold text-center  m-5">Science Fair</h1>
-                <p class="w-[30vw]  mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+      
+    </div>
+
+    <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
+        <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
+            <img src="/resources/events/events_3.jpg" class="h-[35vh]" alt="">
+            <div class="flex flex-col justify-center items-center  md:w-[40vw]">
+                <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Our School Get Together</h1>
+                <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
                     Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
                     aspernatur.</p>
 
-                    <div class="flex flex-row  items-center p-8 space-x-10 flex-wrap">
+                    <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
                         
                         <div class=" flex space-x-5 ">
                             <img src="/resources/events/time.png" class="h-5 w-5" alt="">
@@ -182,8 +196,9 @@
                 href="#">Learn More</a></button>
         </div>
     </div>
-        </div>
-    </section>
+  
+</div>
+    </div>
 
 
     <!--====================================footer section====================================-->
@@ -210,8 +225,8 @@
                     <ul class="list-none mt-6 space-y-2">
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                                href="#">
-                                About us</a>
+                                href="home.html">
+                                Home</a>
                         </li>
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
@@ -225,13 +240,13 @@
                         </li>
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                                href="events.html">
+                                href="#">
                                 Events</a>
                         </li>
 
                         <li>
                             <a class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"
-                                href="#">
+                                href="contact.html">
                                 Contacts</a>
                         </li>
                     </ul>
