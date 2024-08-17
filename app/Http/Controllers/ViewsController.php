@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class ViewsController extends Controller
@@ -16,7 +17,9 @@ class ViewsController extends Controller
         return view('welcome');
     }
     public function teachers(){
-        return view('teachers');
+        $teachers = Teacher::all();
+
+        return view('teachers',compact('teachers'));
     }
     public function events(){
         return view('events');
