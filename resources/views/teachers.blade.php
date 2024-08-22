@@ -80,95 +80,99 @@
 
     </div>
 
+
     <section class="w-full p-10 relative flex flex-col items-center border-gray-500 border-t">
         <h1 class="text-center cursor-text text-3xl m-5">Meet The Team</h1>
         <div class="flex flex-wrap items-center justify-center space-x-32">
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/deputy.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
+            @foreach($teachers as $teacher )
+                <div class="h-fit w-48 flex-col justify-center items-center m-12">
+                    <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
+                        <img src="{{asset($teacher->image_path)}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
+                    </div>
+
+                    <h1 class="text-2xl font-semibold text-center m-2">{{$teacher->name}}</h1>
+                    <p class="p-3 text-center text-xl">{{$teacher->subjects}}</p>
                 </div>
+            @endforeach
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Owiti</h1>
-                <p class="p-3 text-center text-xl">Mathematics <br>& <br> Chemistry</p>
-            </div>
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_2.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_2.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mr. John</h1>
-                <p class="p-3 text-center text-xl">Mathematics <br>& <br> Biology</p>
-            </div>
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_1.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mr. John</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Mathematics <br>& <br> Biology</p>--}}
+            {{--            </div>--}}
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_1.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Alisson</h1>
-                <p class="p-3 text-center text-xl">History <br>& <br> Kiswahili</p>
-            </div>
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_3.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Alisson</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">History <br>& <br> Kiswahili</p>--}}
+            {{--            </div>--}}
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_3.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mr. Sam</h1>
-                <p class="p-3 text-center text-xl">Physics <br>& <br> Mathematics<br> </p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mr. Sam</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Physics <br>& <br> Mathematics<br> </p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_5.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_5.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Jameson</h1>
-                <p class="p-3 text-center text-xl">Biology <br>& <br> Computer</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Jameson</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Biology <br>& <br> Computer</p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_6.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_6.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mr. Richarlison</h1>
-                <p class="p-3 text-center text-xl">Geography <br>& <br> Religion</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mr. Richarlison</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Geography <br>& <br> Religion</p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_7.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_7.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Munene</h1>
-                <p class="p-3 text-center text-xl">Business <br>& <br> Geography</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Munene</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Business <br>& <br> Geography</p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_8.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_8.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Kyle</h1>
-                <p class="p-3 text-center text-xl">English <br>& <br> Literature</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Kyle</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">English <br>& <br> Literature</p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teacher_9.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teacher_9.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. cool</h1>
-                <p class="p-3 text-center text-xl">Kiswahili <br>& <br> Religion</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. cool</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Kiswahili <br>& <br> Religion</p>--}}
+            {{--            </div>--}}
 
-            <div class="h-fit w-48 flex-col justify-center items-center m-12">
-                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">
-                    <img src="{{asset('assets/teachers/teachers_1.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">
-                </div>
+            {{--            <div class="h-fit w-48 flex-col justify-center items-center m-12">--}}
+            {{--                <div class="flex flex-col items-center justify-center w-48 h-48 rounded-full overflow-hidden ">--}}
+            {{--                    <img src="{{asset('assets/teachers/teachers_1.jpg')}}" alt="Image" class="w-full h-full object-cover object-center mx-auto">--}}
+            {{--                </div>--}}
 
-                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Owiti</h1>
-                <p class="p-3 text-center text-xl">Agriculture <br>& <br> Music</p>
-            </div>
+            {{--                <h1 class="text-2xl font-semibold text-center m-2">Mrs. Owiti</h1>--}}
+            {{--                <p class="p-3 text-center text-xl">Agriculture <br>& <br> Music</p>--}}
+            {{--            </div>--}}
 
 
         </div>
