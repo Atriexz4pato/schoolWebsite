@@ -13,6 +13,8 @@ class Teacher extends Model
         'name',
         'email',
         'role',
-        'subjects'
+        'subjects',
+        'text',
+        'image_path'
     ];
 }
