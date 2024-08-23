@@ -15,6 +15,7 @@ class Teacher extends Model
         'role',
         'subjects',
         'text',
-        'image_path'
+        'image_path',
+        'subjects'=>'Chemistry & Maths',
     ];
 }
