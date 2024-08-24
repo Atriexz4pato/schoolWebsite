@@ -20,6 +20,7 @@ class ViewsController extends Controller
         $teachers = Teacher::all();
 
         return view('teachers',compact('teachers'));
+
     }
     public function events(){
         return view('events');
