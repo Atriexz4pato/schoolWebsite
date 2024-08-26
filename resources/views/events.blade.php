@@ -57,6 +57,7 @@
                                 Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
                                 aspernatur.</p>
 
+
                             <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
 
                                 <div class=" flex space-x-5 ">
