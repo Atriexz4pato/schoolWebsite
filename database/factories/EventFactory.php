@@ -22,6 +22,7 @@ class EventFactory extends Factory
 
         //select random image
         $randomImage = $images[array_rand($images)];
+
         //get relative file path
 
         $filePath = 'assets/events/' . $randomImage->getFilename();

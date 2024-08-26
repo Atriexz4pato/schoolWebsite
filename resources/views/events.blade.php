@@ -15,12 +15,12 @@
                     eveniet. Ipsa, excepturi dolor assumenda modi alias sunt vero?</p>
                 <div class="flex items-center p-8 space-x-5 md:space-x-40">
                     <div class=" flex space-x-5">
-                        <img src="{{asset('assets/events/icons8-calendar-50.png')}}" class="h-8 w-8" alt="">
+                        <img src="{{asset('assets/events/cal/icons8-calendar-50.png')}}" class="h-8 w-8" alt="">
                         <p class="text-gray-200 ">June, 6th 2024</p>
                     </div>
 
                     <div class=" flex space-x-5">
-                        <img src="{{asset('assets/events/icons8-location-50.png')}}" class="h-8 w-8" alt="">
+                        <img src="{{asset('assets/events/cal/icons8-location-50.png')}}" class="h-8 w-8" alt="">
                         <p class="text-gray-200 ">Enlight Academy</p>
                     </div>
                 </div>
@@ -46,106 +46,109 @@
                     Upcoming Events</h1>
             </div>
             <!-- An event -->
-            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
-                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
-                    <img src="{{asset('assets/events/events_2.jpg')}}" class="h-[35vh]" alt="">
-                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">
-                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Science Fair</h1>
-                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
-                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
-                            aspernatur.</p>
+            @foreach($events as $event)
+                <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
+                    <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
+                        <img src="{{asset($event->image_url)}}" class="h-[35vh]" alt="">
+                        <div class="flex flex-col justify-center items-center  md:w-[40vw]">
+                            <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Science Fair</h1>
+                            <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
+                                Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
+                                aspernatur.</p>
 
-                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
+                            <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
 
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>
+                                <div class=" flex space-x-5 ">
+                                    <img src="{{asset('assets/events/cal/time.png')}}" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">{{\Illuminate\Support\Carbon::parse($event->start_time)->format('H:i')}}-2:00 pm</p>
+                                </div>
+
+                                <div class=" flex space-x-5 ">
+                                    <img src="{{asset('assets/events/cal/calendar.png')}}" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">June, 6th 2024</p>
+                                </div>
+
+                                <div class=" flex space-x-5">
+                                    <img src="{{asset('assets/events/cal/location.png')}}" class="h-5 w-5" alt="">
+                                    <p class="text-gray-900 ">Enlight Academy</p>
+                                </div>
                             </div>
-
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">June, 6th 2024</p>
-                            </div>
-
-                            <div class=" flex space-x-5">
-                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">Enlight Academy</p>
-                            </div>
+                            <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
+                                    href="#">Learn More</a></button>
                         </div>
-                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
-                                href="#">Learn More</a></button>
                     </div>
+
                 </div>
 
-            </div>
-            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
-                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
-                    <img src="{{asset('assets/events/events_4.jpg')}}" class="h-[35vh]" alt="">
-                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">
-                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Best Students Tour</h1>
-                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
-                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
-                            aspernatur.</p>
+            @endforeach
+{{--            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">--}}
+{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
+{{--                    <img src="{{asset('assets/events/events_4.jpg')}}" class="h-[35vh]" alt="">--}}
+{{--                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">--}}
+{{--                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Best Students Tour</h1>--}}
+{{--                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet--}}
+{{--                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.--}}
+{{--                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi--}}
+{{--                            aspernatur.</p>--}}
 
-                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
+{{--                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">--}}
 
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>
-                            </div>
+{{--                            <div class=" flex space-x-5 ">--}}
+{{--                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>--}}
+{{--                            </div>--}}
 
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">June, 6th 2024</p>
-                            </div>
+{{--                            <div class=" flex space-x-5 ">--}}
+{{--                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">June, 6th 2024</p>--}}
+{{--                            </div>--}}
 
-                            <div class=" flex space-x-5">
-                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">Enlight Academy</p>
-                            </div>
-                        </div>
-                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
-                                href="#">Learn More</a></button>
-                    </div>
-                </div>
+{{--                            <div class=" flex space-x-5">--}}
+{{--                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">Enlight Academy</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a--}}
+{{--                                href="#">Learn More</a></button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
-                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
-                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
-                    <img src="{{asset('assets/events/events_3.jpg')}}" class="h-[35vh]" alt="">
-                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">
-                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Our School Get Together</h1>
-                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
-                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi
-                            aspernatur.</p>
+{{--            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">--}}
+{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
+{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
+{{--                    <img src="{{asset('assets/events/events_3.jpg')}}" class="h-[35vh]" alt="">--}}
+{{--                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">--}}
+{{--                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Our School Get Together</h1>--}}
+{{--                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet--}}
+{{--                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.--}}
+{{--                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi--}}
+{{--                            aspernatur.</p>--}}
 
-                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">
+{{--                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">--}}
 
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>
-                            </div>
+{{--                            <div class=" flex space-x-5 ">--}}
+{{--                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>--}}
+{{--                            </div>--}}
 
-                            <div class=" flex space-x-5 ">
-                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">June, 6th 2024</p>
-                            </div>
+{{--                            <div class=" flex space-x-5 ">--}}
+{{--                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">June, 6th 2024</p>--}}
+{{--                            </div>--}}
 
-                            <div class=" flex space-x-5">
-                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">
-                                <p class="text-gray-900 ">Enlight Academy</p>
-                            </div>
-                        </div>
-                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a
-                                href="#">Learn More</a></button>
-                    </div>
-                </div>
+{{--                            <div class=" flex space-x-5">--}}
+{{--                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">--}}
+{{--                                <p class="text-gray-900 ">Enlight Academy</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a--}}
+{{--                                href="#">Learn More</a></button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
-        </div>
+{{--            </div>--}}
+{{--        </div>--}}
 @endsection
