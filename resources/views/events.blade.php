@@ -61,12 +61,12 @@
 
                                 <div class=" flex space-x-5 ">
                                     <img src="{{asset('assets/events/cal/time.png')}}" class="h-5 w-5" alt="">
-                                    <p class="text-gray-900 ">{{\Illuminate\Support\Carbon::parse($event->start_time)->format('H:i')}}-2:00 pm</p>
+                                    <p class="text-gray-900 ">{{\Illuminate\Support\Carbon::parse($event->start_time)->format('H:i')}} am-{{\Illuminate\Support\Carbon::parse($event->end_time)->format('H:i')}} pm</p>
                                 </div>
 
                                 <div class=" flex space-x-5 ">
                                     <img src="{{asset('assets/events/cal/calendar.png')}}" class="h-5 w-5" alt="">
-                                    <p class="text-gray-900 ">June, 6th 2024</p>
+                                    <p class="text-gray-900 ">{{$event->date}}</p>
                                 </div>
 
                                 <div class=" flex space-x-5">
@@ -82,73 +82,5 @@
                 </div>
 
             @endforeach
-{{--            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">--}}
-{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
-{{--                    <img src="{{asset('assets/events/events_4.jpg')}}" class="h-[35vh]" alt="">--}}
-{{--                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">--}}
-{{--                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Best Students Tour</h1>--}}
-{{--                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet--}}
-{{--                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.--}}
-{{--                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi--}}
-{{--                            aspernatur.</p>--}}
 
-{{--                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">--}}
-
-{{--                            <div class=" flex space-x-5 ">--}}
-{{--                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class=" flex space-x-5 ">--}}
-{{--                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">June, 6th 2024</p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class=" flex space-x-5">--}}
-{{--                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">Enlight Academy</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a--}}
-{{--                                href="#">Learn More</a></button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-
-{{--            <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">--}}
-{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
-{{--                <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">--}}
-{{--                    <img src="{{asset('assets/events/events_3.jpg')}}" class="h-[35vh]" alt="">--}}
-{{--                    <div class="flex flex-col justify-center items-center  md:w-[40vw]">--}}
-{{--                        <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Our School Get Together</h1>--}}
-{{--                        <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet--}}
-{{--                            consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.--}}
-{{--                            Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi--}}
-{{--                            aspernatur.</p>--}}
-
-{{--                        <div class="grid grid-cols-2 md:grid-cols-3  items-center p-8 gap-5 flex-wrap space-x-3">--}}
-
-{{--                            <div class=" flex space-x-5 ">--}}
-{{--                                <img src="{{asset('assets/events/time.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">10:00 am-2:00 pm</p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class=" flex space-x-5 ">--}}
-{{--                                <img src="{{asset('assets/events/calendar.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">June, 6th 2024</p>--}}
-{{--                            </div>--}}
-
-{{--                            <div class=" flex space-x-5">--}}
-{{--                                <img src="{{asset('assets/events/location.png')}}" class="h-5 w-5" alt="">--}}
-{{--                                <p class="text-gray-900 ">Enlight Academy</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <button class="border-gray-800 border p-3 text-gray-900 hover:bg-gray-800 hover:text-gray-200"><a--}}
-{{--                                href="#">Learn More</a></button>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
 @endsection
