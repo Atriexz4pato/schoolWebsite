@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(TeacherSeeder::class);
+        $this->call(EventSeeder::class);
 //        User::factory()->create([
 //            'name' => 'Anonymous User',
 //            'email' => 'anonymous@example.com',

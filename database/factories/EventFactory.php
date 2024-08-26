@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Factory>
  */
-class EventsFactory extends Factory
+class EventFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -25,14 +25,14 @@ class EventsFactory extends Factory
         //get relative file path
 
         $filePath = 'assets/events/' . $randomImage->getFilename();
-
+        $titles = ['Academic Clinic', 'Science Fair', 'Best Students Tour', 'Our School Get Together'];
 
         return [
-            'title' => 'Academic Clinic'|| 'Science Fair' || 'Best Students Tour'|| 'Our School Get Together',
+            'title' => $this->faker->randomElement($titles),
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia. Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi aspernatur.',
             'date' => $this->faker->date(),
-            'start_time'=> '8:00 a.m',
-            'end_time'=> '3:00 p.m',
+            'start_time'=> $this->faker->time(),
+            'end_time'=> $this->faker->time(),
             'image_url'=>$filePath,
             'venue' => 'Enlight School'
 
