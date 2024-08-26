@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class ViewsController extends Controller
 
     }
     public function events(){
-        return view('events');
+        $events= Event::all();
+        return view('events',compact('events'));
 
     }
     public function contacts(){
