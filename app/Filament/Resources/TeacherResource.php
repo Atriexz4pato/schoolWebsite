@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\View\Component;
 
 class TeacherResource extends Resource
 {
@@ -23,6 +24,21 @@ class TeacherResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('name')
+                ->required()->autofocus(),
+                Forms\Components\TextInput::make('email')
+                    ->required()->autofocus(),
+                Forms\Components\TextInput::make('subjects')
+                    ->required()->autofocus(),
+                Forms\Components\TextInput::make('role')
+                ->required()
+                ->autofocus(),
+                Forms\Components\Textarea::make('description'),
+                Forms\Components\FileUpload::make('image_path')
+                    ->directory('assets/teachers')
+                    ->label('Photo')
+                    ->image()
+                ->required(),
 
             ]);
     }
@@ -36,7 +52,7 @@ class TeacherResource extends Resource
                 Tables\Columns\TextColumn::make('role'),
                 Tables\Columns\TextColumn::make('subjects'),
                 Tables\Columns\TextColumn::make('text'),
-                Tables\Columns\TextColumn::make('subjects'),
+
 
 
             ])
