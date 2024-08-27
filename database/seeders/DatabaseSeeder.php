@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(TeacherSeeder::class);
         $this->call(EventSeeder::class);
+        $this->call(NewSeeder::class);
 //        User::factory()->create([
 //            'name' => 'Anonymous User',
 //            'email' => 'anonymous@example.com',
