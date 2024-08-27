@@ -30,7 +30,7 @@
 
             </div>
             <div class="relative h-full md:w-[45vw] overflow-hidden md:mt-10">
-                <img src="{{asset('assets/events/event_1.jpg')}}" alt="" class="h-full  overflow-hidden">
+                <img src="{{asset('storage/assets/events/event_1.jpg')}}" alt="" class="h-full  overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50 z-10"></div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
                         <img src="{{asset($event->image_url)}}" class="h-[35vh]" alt="">
                         <div class="flex flex-col justify-center items-center  md:w-[40vw]">
-                            <h1 class="text-3xl font-semibold text-center m-3 md:m-5">Science Fair</h1>
+                            <h1 class="text-3xl font-semibold text-center m-3 md:m-5">{{$event->title}}</h1>
                             <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet
                                 consectetur adipisicing elit. Officiis eum veritatis asperiores. Ex, voluptatem mollitia.
                                 Iure libero, vitae voluptas voluptatem a corporis quia, nam odit placeat quis neque quasi

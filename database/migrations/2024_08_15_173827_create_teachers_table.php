@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('role');
             $table->string('subjects');
+            $table->string('subject_2');
             $table->string('image_path')->nullable(false);
             $table->timestamps();
         });

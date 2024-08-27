@@ -18,13 +18,13 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         // Get all image files from the public/images directory
-        $imageFiles = File::files(public_path('assets/teachers'));
+        $imageFiles = File::files(public_path('storage/assets/teachers'));
 
         // Randomly select one image file
         $randomImage = $imageFiles[array_rand($imageFiles)];
 
         // Get the relative path to the image
-        $imagePath = 'assets/teachers/' . $randomImage->getFilename();
+        $imagePath = 'storage/assets/teachers/' . $randomImage->getFilename();
         return [
             //
             'name' => $this->faker->name(),
@@ -32,7 +32,8 @@ class TeacherFactory extends Factory
             'image_path' => $imagePath,
             'id' => $this->faker->unique()->randomNumber(),
             'role'=>'Class Teacher',
-            'subjects'=>'English & Chemistry'
+            'subjects'=>'English',
+            'subject_2'=> 'Maths',
         ];
     }
 }

@@ -6,6 +6,8 @@ use App\Filament\Resources\EventResource\Pages;
 use App\Filament\Resources\EventResource\RelationManagers;
 use App\Models\Event;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -24,7 +26,29 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('title')
+                ->required(),
+                Forms\Components\Textarea::make('description')
+                ->required()
+                ->label('Description'),
+                TextInput::make('venue')
+                ->required()
+                ->label('Venue'),
+                Forms\Components\DatePicker::make('date')
+                ->label('Date')
+                ->required(),
+                Forms\Components\TimePicker::make('start_time')
+                ->label('Start Time')
+                ->required(),
+                Forms\Components\TimePicker::make('end_time')
+                ->label('End Time')
+                ->required(),
+                FileUpload::make('image_url')
+                ->label('Image')
+                    ->directory('assets/events')
+                ->required(),
+
+
             ]);
     }
 
@@ -38,6 +62,7 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                 ->limit(10),
                 Tables\Columns\TextColumn::make('venue'),
+                Tables\Columns\TextColumn::make('date'),
                 Tables\Columns\TextColumn::make('start_time'),
                 Tables\Columns\TextColumn::make('end_time'),
 
