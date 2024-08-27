@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Neew;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ViewsController extends Controller
         return view('co_curricular');
     }
     public function home(){
-        return view('welcome');
+        $news = Neew::all();
+        return view('welcome',compact('news'));
     }
     public function teachers(){
         $teachers = Teacher::all();

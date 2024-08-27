@@ -117,33 +117,19 @@
             </h1>
         </div>
         <div class="flex h-fit justify-center mt-10 space-x-8 ">
-            <div class=" relative w-[25%] bg-gray-200 rounded-lg h-[40%] shadow ">
-                <img src="{{asset('storage/assets/news/onlineclass_1.jpg')}}" class="rounded-lg relative" alt="">
-                <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
-                <!-- date -->
-                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
-                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold "> Learning at Home Effectively
-                </h1>
 
-            </div>
-            <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow ">
-                <img src="{{asset('storage/assets/news/teachers_1.jpg')}}" alt="">
-                <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
-                <!-- date -->
-                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
-                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold ">Meet your New Teachers</h1>
+            @foreach($news as $new)
+                <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow ">
+                    <img src="{{asset('storage/'.$new->image_url)}}" alt="">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
+                    <!-- date -->
+                    <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
+                    <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold ">{{$new->title}}</h1>
 
-            </div>
+                </div>
+            @endforeach
 
-            <div class=" relative w-[25%] bg-gray-200 h-[40%] shadow rounded-lg">
-                <img class=" relative" src="{{asset('storage/assets/news/backtoschool.jpg')}}" alt="">
-                <div class="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
-                <!-- date -->
-                <p id="currentDate" class="absolute top-0 left-0 font-semibold text-gray-100 bg-none p-4"></p>
-                <h1 class="absolute bottom-16 ml-5 text-gray-100 text-3xl font-semibold "> Back to School News Updates
-                </h1>
 
-            </div>
         </div>
         <div class="flex justify-center w-full mb-7">
             <button
