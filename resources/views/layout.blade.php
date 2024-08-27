@@ -13,15 +13,15 @@
 
 <body class="flex flex-col bg-gray-100 min-h-screen">
 <header class=" fixed bg-gray-100 w-full  z-20 py-2 shadow-lg text-gray-800">
-    <nav class="flex justify-between h-min-fit items-center  w-[92%] mx-auto">
-        <div>
+    <nav class="flex  h-min-fit items-center  w-[92%] mx-auto">
+        <div class="flex justify-start">
             <h1 class="text-2xl font-semibold">ENLIGHT</h1>
 
 
         </div>
 
         <div id="navlinks"
-             class="visible md:visible nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-12 md:w-auto w-full flex md:items-center px-5">
+             class=" visible md:visible nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-12 md:w-auto w-full flex md:items-center px-5">
             <ul class="flex md:flex-row flex-col items-center md:gap-[4vw] gap-8 ">
                 <li>
                     <a class="hover:text-gray-500" href="{{route('home')}}">Home</a>
@@ -43,8 +43,8 @@
 
         </div>
 
-        <div class="flex items-center gap-6">
-            <button class="bg-indigo-500 text-white m-1 px-5 py-2 rounded-full hover:bg-[#89aced] ">Sign In</button>
+        <div class="flex items-center gap-6 left-3 max-w-3">
+
             <ion-icon onclick="displayNavlinks(this)" name="menu-outline"
                       class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </div>
