@@ -49,7 +49,7 @@
             @foreach($events as $event)
                 <div class="flex flex-col justify-center items-center md:w-[85vw] min-h-fit mt-10 px-2 md:px-32">
                     <div class=" md:h-[40vh] md:flex items-center justify-center md:p-10 w-full mb-5 md:space-x-9">
-                        <img src="{{asset($event->image_url)}}" class="h-[35vh]" alt="">
+                        <img src="{{asset('storage/'.$event->image_url)}}" class="h-[35vh]" alt="">
                         <div class="flex flex-col justify-center items-center  md:w-[40vw]">
                             <h1 class="text-3xl font-semibold text-center m-3 md:m-5">{{$event->title}}</h1>
                             <p class="md:w-[30vw]  md:mt-5 text-gray-800 text-xl font-serif">Lorem ipsum dolor sit amet

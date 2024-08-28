@@ -18,14 +18,14 @@ class EventFactory extends Factory
     public function definition(): array
     {
         //get all images from
-        $images = File::files(public_path('storage/assets/events'));
+        $images = File::files(public_path('/assets/events'));
 
         //select random image
         $randomImage = $images[array_rand($images)];
 
         //get relative file path
 
-        $filePath = 'storage/assets/events/' . $randomImage->getFilename();
+        $filePath = '/assets/events/' . $randomImage->getFilename();
         $titles = ['Academic Clinic', 'Science Fair', 'Best Students Tour', 'Our School Get Together'];
 
         return [
