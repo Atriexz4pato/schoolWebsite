@@ -16,6 +16,7 @@ class ViewsController extends Controller
         return view('co_curricular');
     }
     public function home(){
+
         $news = Neew::all();
         return view('welcome',compact('news'));
     }
