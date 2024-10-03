@@ -12,7 +12,6 @@ class ViewsController extends Controller
     //
 
     public function co_curricular(){
-
         return view('co_curricular');
     }
     public function home(){
